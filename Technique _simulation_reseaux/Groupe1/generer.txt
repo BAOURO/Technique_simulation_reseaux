@@ -1,0 +1,2 @@
+cd .~/omnetpp/sample/resultfile/ahora 
+savetool x *.sca -o file.csv
