@@ -1,0 +1,37 @@
+E # 0 t 0 m 1 ce -1 msg -1
+SB v 1284 rid config2-0-20190607-19:45:07-7800 b 1000
+KF p -1 c "" s ""
+MC id 1 c omnetpp::cModule t Groupe3 n Groupe3 cm 1
+MS id 1 d ""
+MC id 2 c Sender t Sender pid 1 n Ordi1
+GC m 2 g 0 n in o 0
+GC m 2 g 3 n out o 1
+MS id 2 d p=68,109;t=Envoyeur,,#0000A0
+MC id 3 c Receiver t Receiver pid 1 n Ordi2
+GC m 3 g 0 n in o 0
+GC m 3 g 3 n out o 1
+MS id 3 d t=Receveur,,#008000;p=321,211
+CC sm 2 sg 3 dm 3 dg 0
+CS sm 2 sg 3 d ""
+CC sm 3 sg 3 dm 2 dg 0
+CS sm 3 sg 3 d ""
+MB sm 1 tm 3 m initialize
+CM id 2 tid 1 eid 2 etid 1 c Message n "Ceci vient de Ordi1" pe -1
+BS id 2 tid 1 eid 2 etid 1 c Message n "Ceci vient de Ordi1" pe 0
+SH sm 2 sg 3
+ES t 5
+ME
+MB sm 1 tm 2 m initialize
+CM id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe -1
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 0
+ES t 5
+ME
+
+E # 1 t 5 m 3 ce 0 msg 2
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 2 tid 1 eid 2 etid 1 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 1
+CM id 4 tid 4 eid 4 etid 4 c omnetpp::cMessage n OK pe -1
+BS id 4 tid 4 eid 4 etid 4 c omnetpp::cMessage n OK pe 1
+SH sm 3 sg 3 pd 5
+ES t 10
+CL id 4 tid 4 eid 4 etid 4 c omnetpp::cMessage n OK pe 1 cid 5

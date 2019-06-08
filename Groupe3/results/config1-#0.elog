@@ -1,0 +1,855 @@
+E # 0 t 0 m 1 ce -1 msg -1
+SB v 1284 rid config1-0-20190607-19:35:08-18168 b 1000
+KF p -1 c "" s ""
+MC id 1 c omnetpp::cModule t Groupe3 n Groupe3 cm 1
+MS id 1 d ""
+MC id 2 c Sender t Sender pid 1 n Ordi1
+GC m 2 g 0 n in o 0
+GC m 2 g 3 n out o 1
+MS id 2 d p=68,109;t=Envoyeur,,#0000A0
+MC id 3 c Receiver t Receiver pid 1 n Ordi2
+GC m 3 g 0 n in o 0
+GC m 3 g 3 n out o 1
+MS id 3 d t=Receveur,,#008000;p=321,211
+CC sm 2 sg 3 dm 3 dg 0
+CS sm 2 sg 3 d ""
+CC sm 3 sg 3 dm 2 dg 0
+CS sm 3 sg 3 d ""
+MB sm 1 tm 3 m initialize
+CM id 2 tid 1 eid 2 etid 1 c Message n "Ceci vient de Ordi1" pe -1
+BS id 2 tid 1 eid 2 etid 1 c Message n "Ceci vient de Ordi1" pe 0
+SH sm 2 sg 3
+ES t 5
+ME
+MB sm 1 tm 2 m initialize
+CM id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe -1
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 0
+ES t 5
+ME
+
+E # 1 t 5 m 3 ce 0 msg 2
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 2 tid 1 eid 2 etid 1 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 1
+CM id 4 tid 4 eid 4 etid 4 c omnetpp::cMessage n OK pe -1
+BS id 4 tid 4 eid 4 etid 4 c omnetpp::cMessage n OK pe 1
+SH sm 3 sg 3 pd 5
+ES t 10
+CL id 4 tid 4 eid 4 etid 4 c omnetpp::cMessage n OK pe 1 cid 5
+
+E # 2 t 5 m 2 ce 0 msg 0
+- INFO (Sender)Groupe3.Ordi1: Delai depasse; Renvoi du message...
+CL id 1 tid 1 eid 1 etid 1 c Message n "Ceci vient de Ordi1" pe 0 cid 6
+BS id 6 tid 1 eid 6 etid 1 c Message n "Ceci vient de Ordi1" pe 2
+SH sm 2 sg 3 pd 5
+ES t 10
+CL id 6 tid 1 eid 6 etid 1 c Message n "Ceci vient de Ordi1" pe 2 cid 7
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 2
+ES t 10
+
+E # 3 t 10 m 2 ce 1 msg 4
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 4 tid 4 eid 4 etid 4 c omnetpp::cMessage n OK pe 3
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 2
+DM id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 2
+CM id 8 tid 8 eid 8 etid 8 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 8 tid 8 eid 8 etid 8 c Message n "Ceci vient de Ordi1" pe 3 cid 9
+BS id 9 tid 8 eid 9 etid 8 c Message n "Ceci vient de Ordi1" pe 3
+SH sm 2 sg 3 pd 5
+ES t 15
+CL id 9 tid 8 eid 9 etid 8 c Message n "Ceci vient de Ordi1" pe 3 cid 10
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 3
+ES t 15
+
+E # 4 t 10 m 3 ce 2 msg 6
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 6 tid 1 eid 6 etid 1 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 4
+CM id 11 tid 11 eid 11 etid 11 c omnetpp::cMessage n OK pe -1
+BS id 11 tid 11 eid 11 etid 11 c omnetpp::cMessage n OK pe 4
+SH sm 3 sg 3 pd 5
+ES t 15
+CL id 11 tid 11 eid 11 etid 11 c omnetpp::cMessage n OK pe 4 cid 12
+
+E # 5 t 15 m 3 ce 3 msg 9
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 9 tid 8 eid 9 etid 8 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 5
+CM id 13 tid 13 eid 13 etid 13 c omnetpp::cMessage n OK pe -1
+BS id 13 tid 13 eid 13 etid 13 c omnetpp::cMessage n OK pe 5
+SH sm 3 sg 3 pd 5
+ES t 20
+CL id 13 tid 13 eid 13 etid 13 c omnetpp::cMessage n OK pe 5 cid 14
+
+E # 6 t 15 m 2 ce 3 msg 0
+- INFO (Sender)Groupe3.Ordi1: Delai depasse; Renvoi du message...
+CL id 8 tid 8 eid 8 etid 8 c Message n "Ceci vient de Ordi1" pe 3 cid 15
+BS id 15 tid 8 eid 15 etid 8 c Message n "Ceci vient de Ordi1" pe 6
+SH sm 2 sg 3 pd 5
+ES t 20
+CL id 15 tid 8 eid 15 etid 8 c Message n "Ceci vient de Ordi1" pe 6 cid 16
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 6
+ES t 20
+
+E # 7 t 15 m 2 ce 4 msg 11
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 11 tid 11 eid 11 etid 11 c omnetpp::cMessage n OK pe 7
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 6
+DM id 8 tid 8 eid 8 etid 8 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 6
+CM id 17 tid 17 eid 17 etid 17 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 17 tid 17 eid 17 etid 17 c Message n "Ceci vient de Ordi1" pe 7 cid 18
+BS id 18 tid 17 eid 18 etid 17 c Message n "Ceci vient de Ordi1" pe 7
+SH sm 2 sg 3 pd 5
+ES t 20
+CL id 18 tid 17 eid 18 etid 17 c Message n "Ceci vient de Ordi1" pe 7 cid 19
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 7
+ES t 20
+
+E # 8 t 20 m 2 ce 5 msg 13
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 13 tid 13 eid 13 etid 13 c omnetpp::cMessage n OK pe 8
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 7
+DM id 17 tid 17 eid 17 etid 17 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 7
+CM id 20 tid 20 eid 20 etid 20 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 20 tid 20 eid 20 etid 20 c Message n "Ceci vient de Ordi1" pe 8 cid 21
+BS id 21 tid 20 eid 21 etid 20 c Message n "Ceci vient de Ordi1" pe 8
+SH sm 2 sg 3 pd 5
+ES t 25
+CL id 21 tid 20 eid 21 etid 20 c Message n "Ceci vient de Ordi1" pe 8 cid 22
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 8
+ES t 25
+
+E # 9 t 20 m 3 ce 6 msg 15
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 15 tid 8 eid 15 etid 8 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 9
+CM id 23 tid 23 eid 23 etid 23 c omnetpp::cMessage n OK pe -1
+BS id 23 tid 23 eid 23 etid 23 c omnetpp::cMessage n OK pe 9
+SH sm 3 sg 3 pd 5
+ES t 25
+CL id 23 tid 23 eid 23 etid 23 c omnetpp::cMessage n OK pe 9 cid 24
+
+E # 10 t 20 m 3 ce 7 msg 18
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 18 tid 17 eid 18 etid 17 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 10
+CM id 25 tid 25 eid 25 etid 25 c omnetpp::cMessage n OK pe -1
+BS id 25 tid 25 eid 25 etid 25 c omnetpp::cMessage n OK pe 10
+SH sm 3 sg 3 pd 5
+ES t 25
+CL id 25 tid 25 eid 25 etid 25 c omnetpp::cMessage n OK pe 10 cid 26
+
+E # 11 t 25 m 3 ce 8 msg 21
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 21 tid 20 eid 21 etid 20 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 11
+CM id 27 tid 27 eid 27 etid 27 c omnetpp::cMessage n OK pe -1
+BS id 27 tid 27 eid 27 etid 27 c omnetpp::cMessage n OK pe 11
+SH sm 3 sg 3 pd 5
+ES t 30
+CL id 27 tid 27 eid 27 etid 27 c omnetpp::cMessage n OK pe 11 cid 28
+
+E # 12 t 25 m 2 ce 8 msg 0
+- INFO (Sender)Groupe3.Ordi1: Delai depasse; Renvoi du message...
+CL id 20 tid 20 eid 20 etid 20 c Message n "Ceci vient de Ordi1" pe 8 cid 29
+BS id 29 tid 20 eid 29 etid 20 c Message n "Ceci vient de Ordi1" pe 12
+SH sm 2 sg 3 pd 5
+ES t 30
+CL id 29 tid 20 eid 29 etid 20 c Message n "Ceci vient de Ordi1" pe 12 cid 30
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 12
+ES t 30
+
+E # 13 t 25 m 2 ce 9 msg 23
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 23 tid 23 eid 23 etid 23 c omnetpp::cMessage n OK pe 13
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 12
+DM id 20 tid 20 eid 20 etid 20 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 12
+CM id 31 tid 31 eid 31 etid 31 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 31 tid 31 eid 31 etid 31 c Message n "Ceci vient de Ordi1" pe 13 cid 32
+BS id 32 tid 31 eid 32 etid 31 c Message n "Ceci vient de Ordi1" pe 13
+SH sm 2 sg 3 pd 5
+ES t 30
+CL id 32 tid 31 eid 32 etid 31 c Message n "Ceci vient de Ordi1" pe 13 cid 33
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 13
+ES t 30
+
+E # 14 t 25 m 2 ce 10 msg 25
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 25 tid 25 eid 25 etid 25 c omnetpp::cMessage n OK pe 14
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 13
+DM id 31 tid 31 eid 31 etid 31 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 13
+CM id 34 tid 34 eid 34 etid 34 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 34 tid 34 eid 34 etid 34 c Message n "Ceci vient de Ordi1" pe 14 cid 35
+BS id 35 tid 34 eid 35 etid 34 c Message n "Ceci vient de Ordi1" pe 14
+SH sm 2 sg 3 pd 5
+ES t 30
+CL id 35 tid 34 eid 35 etid 34 c Message n "Ceci vient de Ordi1" pe 14 cid 36
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 14
+ES t 30
+
+E # 15 t 30 m 2 ce 11 msg 27
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 27 tid 27 eid 27 etid 27 c omnetpp::cMessage n OK pe 15
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 14
+DM id 34 tid 34 eid 34 etid 34 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 14
+CM id 37 tid 37 eid 37 etid 37 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 37 tid 37 eid 37 etid 37 c Message n "Ceci vient de Ordi1" pe 15 cid 38
+BS id 38 tid 37 eid 38 etid 37 c Message n "Ceci vient de Ordi1" pe 15
+SH sm 2 sg 3 pd 5
+ES t 35
+CL id 38 tid 37 eid 38 etid 37 c Message n "Ceci vient de Ordi1" pe 15 cid 39
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 15
+ES t 35
+
+E # 16 t 30 m 3 ce 12 msg 29
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 29 tid 20 eid 29 etid 20 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 16
+CM id 40 tid 40 eid 40 etid 40 c omnetpp::cMessage n OK pe -1
+BS id 40 tid 40 eid 40 etid 40 c omnetpp::cMessage n OK pe 16
+SH sm 3 sg 3 pd 5
+ES t 35
+CL id 40 tid 40 eid 40 etid 40 c omnetpp::cMessage n OK pe 16 cid 41
+
+E # 17 t 30 m 3 ce 13 msg 32
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 32 tid 31 eid 32 etid 31 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 17
+CM id 42 tid 42 eid 42 etid 42 c omnetpp::cMessage n OK pe -1
+BS id 42 tid 42 eid 42 etid 42 c omnetpp::cMessage n OK pe 17
+SH sm 3 sg 3 pd 5
+ES t 35
+CL id 42 tid 42 eid 42 etid 42 c omnetpp::cMessage n OK pe 17 cid 43
+
+E # 18 t 30 m 3 ce 14 msg 35
+- INFO (Receiver)Groupe3.Ordi2: Message perdu: Ceci vient de Ordi1
+BU id 3 txt Perdu!
+DM id 35 tid 34 eid 35 etid 34 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 18
+
+E # 19 t 35 m 3 ce 15 msg 38
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 38 tid 37 eid 38 etid 37 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 19
+CM id 44 tid 44 eid 44 etid 44 c omnetpp::cMessage n OK pe -1
+BS id 44 tid 44 eid 44 etid 44 c omnetpp::cMessage n OK pe 19
+SH sm 3 sg 3 pd 5
+ES t 40
+CL id 44 tid 44 eid 44 etid 44 c omnetpp::cMessage n OK pe 19 cid 45
+
+E # 20 t 35 m 2 ce 15 msg 0
+- INFO (Sender)Groupe3.Ordi1: Delai depasse; Renvoi du message...
+CL id 37 tid 37 eid 37 etid 37 c Message n "Ceci vient de Ordi1" pe 15 cid 46
+BS id 46 tid 37 eid 46 etid 37 c Message n "Ceci vient de Ordi1" pe 20
+SH sm 2 sg 3 pd 5
+ES t 40
+CL id 46 tid 37 eid 46 etid 37 c Message n "Ceci vient de Ordi1" pe 20 cid 47
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 20
+ES t 40
+
+E # 21 t 35 m 2 ce 16 msg 40
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 40 tid 40 eid 40 etid 40 c omnetpp::cMessage n OK pe 21
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 20
+DM id 37 tid 37 eid 37 etid 37 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 20
+CM id 48 tid 48 eid 48 etid 48 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 48 tid 48 eid 48 etid 48 c Message n "Ceci vient de Ordi1" pe 21 cid 49
+BS id 49 tid 48 eid 49 etid 48 c Message n "Ceci vient de Ordi1" pe 21
+SH sm 2 sg 3 pd 5
+ES t 40
+CL id 49 tid 48 eid 49 etid 48 c Message n "Ceci vient de Ordi1" pe 21 cid 50
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 21
+ES t 40
+
+E # 22 t 35 m 2 ce 17 msg 42
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 42 tid 42 eid 42 etid 42 c omnetpp::cMessage n OK pe 22
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 21
+DM id 48 tid 48 eid 48 etid 48 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 21
+CM id 51 tid 51 eid 51 etid 51 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 51 tid 51 eid 51 etid 51 c Message n "Ceci vient de Ordi1" pe 22 cid 52
+BS id 52 tid 51 eid 52 etid 51 c Message n "Ceci vient de Ordi1" pe 22
+SH sm 2 sg 3 pd 5
+ES t 40
+CL id 52 tid 51 eid 52 etid 51 c Message n "Ceci vient de Ordi1" pe 22 cid 53
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 22
+ES t 40
+
+E # 23 t 40 m 2 ce 19 msg 44
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 44 tid 44 eid 44 etid 44 c omnetpp::cMessage n OK pe 23
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 22
+DM id 51 tid 51 eid 51 etid 51 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 22
+CM id 54 tid 54 eid 54 etid 54 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 54 tid 54 eid 54 etid 54 c Message n "Ceci vient de Ordi1" pe 23 cid 55
+BS id 55 tid 54 eid 55 etid 54 c Message n "Ceci vient de Ordi1" pe 23
+SH sm 2 sg 3 pd 5
+ES t 45
+CL id 55 tid 54 eid 55 etid 54 c Message n "Ceci vient de Ordi1" pe 23 cid 56
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 23
+ES t 45
+
+E # 24 t 40 m 3 ce 20 msg 46
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 46 tid 37 eid 46 etid 37 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 24
+CM id 57 tid 57 eid 57 etid 57 c omnetpp::cMessage n OK pe -1
+BS id 57 tid 57 eid 57 etid 57 c omnetpp::cMessage n OK pe 24
+SH sm 3 sg 3 pd 5
+ES t 45
+CL id 57 tid 57 eid 57 etid 57 c omnetpp::cMessage n OK pe 24 cid 58
+
+E # 25 t 40 m 3 ce 21 msg 49
+- INFO (Receiver)Groupe3.Ordi2: Message perdu: Ceci vient de Ordi1
+BU id 3 txt Perdu!
+DM id 49 tid 48 eid 49 etid 48 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 25
+
+E # 26 t 40 m 3 ce 22 msg 52
+- INFO (Receiver)Groupe3.Ordi2: Message perdu: Ceci vient de Ordi1
+BU id 3 txt Perdu!
+DM id 52 tid 51 eid 52 etid 51 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 26
+
+E # 27 t 45 m 3 ce 23 msg 55
+- INFO (Receiver)Groupe3.Ordi2: Message perdu: Ceci vient de Ordi1
+BU id 3 txt Perdu!
+DM id 55 tid 54 eid 55 etid 54 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 27
+
+E # 28 t 45 m 2 ce 23 msg 0
+- INFO (Sender)Groupe3.Ordi1: Delai depasse; Renvoi du message...
+CL id 54 tid 54 eid 54 etid 54 c Message n "Ceci vient de Ordi1" pe 23 cid 59
+BS id 59 tid 54 eid 59 etid 54 c Message n "Ceci vient de Ordi1" pe 28
+SH sm 2 sg 3 pd 5
+ES t 50
+CL id 59 tid 54 eid 59 etid 54 c Message n "Ceci vient de Ordi1" pe 28 cid 60
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 28
+ES t 50
+
+E # 29 t 45 m 2 ce 24 msg 57
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 57 tid 57 eid 57 etid 57 c omnetpp::cMessage n OK pe 29
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 28
+DM id 54 tid 54 eid 54 etid 54 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 28
+CM id 61 tid 61 eid 61 etid 61 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 61 tid 61 eid 61 etid 61 c Message n "Ceci vient de Ordi1" pe 29 cid 62
+BS id 62 tid 61 eid 62 etid 61 c Message n "Ceci vient de Ordi1" pe 29
+SH sm 2 sg 3 pd 5
+ES t 50
+CL id 62 tid 61 eid 62 etid 61 c Message n "Ceci vient de Ordi1" pe 29 cid 63
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 29
+ES t 50
+
+E # 30 t 50 m 3 ce 28 msg 59
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 59 tid 54 eid 59 etid 54 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 30
+CM id 64 tid 64 eid 64 etid 64 c omnetpp::cMessage n OK pe -1
+BS id 64 tid 64 eid 64 etid 64 c omnetpp::cMessage n OK pe 30
+SH sm 3 sg 3 pd 5
+ES t 55
+CL id 64 tid 64 eid 64 etid 64 c omnetpp::cMessage n OK pe 30 cid 65
+
+E # 31 t 50 m 3 ce 29 msg 62
+- INFO (Receiver)Groupe3.Ordi2: Message perdu: Ceci vient de Ordi1
+BU id 3 txt Perdu!
+DM id 62 tid 61 eid 62 etid 61 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 31
+
+E # 32 t 50 m 2 ce 29 msg 0
+- INFO (Sender)Groupe3.Ordi1: Delai depasse; Renvoi du message...
+CL id 61 tid 61 eid 61 etid 61 c Message n "Ceci vient de Ordi1" pe 29 cid 66
+BS id 66 tid 61 eid 66 etid 61 c Message n "Ceci vient de Ordi1" pe 32
+SH sm 2 sg 3 pd 5
+ES t 55
+CL id 66 tid 61 eid 66 etid 61 c Message n "Ceci vient de Ordi1" pe 32 cid 67
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 32
+ES t 55
+
+E # 33 t 55 m 2 ce 30 msg 64
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 64 tid 64 eid 64 etid 64 c omnetpp::cMessage n OK pe 33
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 32
+DM id 61 tid 61 eid 61 etid 61 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 32
+CM id 68 tid 68 eid 68 etid 68 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 68 tid 68 eid 68 etid 68 c Message n "Ceci vient de Ordi1" pe 33 cid 69
+BS id 69 tid 68 eid 69 etid 68 c Message n "Ceci vient de Ordi1" pe 33
+SH sm 2 sg 3 pd 5
+ES t 60
+CL id 69 tid 68 eid 69 etid 68 c Message n "Ceci vient de Ordi1" pe 33 cid 70
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 33
+ES t 60
+
+E # 34 t 55 m 3 ce 32 msg 66
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 66 tid 61 eid 66 etid 61 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 34
+CM id 71 tid 71 eid 71 etid 71 c omnetpp::cMessage n OK pe -1
+BS id 71 tid 71 eid 71 etid 71 c omnetpp::cMessage n OK pe 34
+SH sm 3 sg 3 pd 5
+ES t 60
+CL id 71 tid 71 eid 71 etid 71 c omnetpp::cMessage n OK pe 34 cid 72
+
+E # 35 t 60 m 3 ce 33 msg 69
+- INFO (Receiver)Groupe3.Ordi2: Message perdu: Ceci vient de Ordi1
+BU id 3 txt Perdu!
+DM id 69 tid 68 eid 69 etid 68 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 35
+
+E # 36 t 60 m 2 ce 33 msg 0
+- INFO (Sender)Groupe3.Ordi1: Delai depasse; Renvoi du message...
+CL id 68 tid 68 eid 68 etid 68 c Message n "Ceci vient de Ordi1" pe 33 cid 73
+BS id 73 tid 68 eid 73 etid 68 c Message n "Ceci vient de Ordi1" pe 36
+SH sm 2 sg 3 pd 5
+ES t 65
+CL id 73 tid 68 eid 73 etid 68 c Message n "Ceci vient de Ordi1" pe 36 cid 74
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 36
+ES t 65
+
+E # 37 t 60 m 2 ce 34 msg 71
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 71 tid 71 eid 71 etid 71 c omnetpp::cMessage n OK pe 37
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 36
+DM id 68 tid 68 eid 68 etid 68 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 36
+CM id 75 tid 75 eid 75 etid 75 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 75 tid 75 eid 75 etid 75 c Message n "Ceci vient de Ordi1" pe 37 cid 76
+BS id 76 tid 75 eid 76 etid 75 c Message n "Ceci vient de Ordi1" pe 37
+SH sm 2 sg 3 pd 5
+ES t 65
+CL id 76 tid 75 eid 76 etid 75 c Message n "Ceci vient de Ordi1" pe 37 cid 77
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 37
+ES t 65
+
+E # 38 t 65 m 3 ce 36 msg 73
+- INFO (Receiver)Groupe3.Ordi2: Message perdu: Ceci vient de Ordi1
+BU id 3 txt Perdu!
+DM id 73 tid 68 eid 73 etid 68 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 38
+
+E # 39 t 65 m 3 ce 37 msg 76
+- INFO (Receiver)Groupe3.Ordi2: Message perdu: Ceci vient de Ordi1
+BU id 3 txt Perdu!
+DM id 76 tid 75 eid 76 etid 75 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 39
+
+E # 40 t 65 m 2 ce 37 msg 0
+- INFO (Sender)Groupe3.Ordi1: Delai depasse; Renvoi du message...
+CL id 75 tid 75 eid 75 etid 75 c Message n "Ceci vient de Ordi1" pe 37 cid 78
+BS id 78 tid 75 eid 78 etid 75 c Message n "Ceci vient de Ordi1" pe 40
+SH sm 2 sg 3 pd 5
+ES t 70
+CL id 78 tid 75 eid 78 etid 75 c Message n "Ceci vient de Ordi1" pe 40 cid 79
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 40
+ES t 70
+
+E # 41 t 70 m 3 ce 40 msg 78
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 78 tid 75 eid 78 etid 75 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 41
+CM id 80 tid 80 eid 80 etid 80 c omnetpp::cMessage n OK pe -1
+BS id 80 tid 80 eid 80 etid 80 c omnetpp::cMessage n OK pe 41
+SH sm 3 sg 3 pd 5
+ES t 75
+CL id 80 tid 80 eid 80 etid 80 c omnetpp::cMessage n OK pe 41 cid 81
+
+E # 42 t 70 m 2 ce 40 msg 0
+- INFO (Sender)Groupe3.Ordi1: Delai depasse; Renvoi du message...
+CL id 75 tid 75 eid 75 etid 75 c Message n "Ceci vient de Ordi1" pe 40 cid 82
+BS id 82 tid 75 eid 82 etid 75 c Message n "Ceci vient de Ordi1" pe 42
+SH sm 2 sg 3 pd 5
+ES t 75
+CL id 82 tid 75 eid 82 etid 75 c Message n "Ceci vient de Ordi1" pe 42 cid 83
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 42
+ES t 75
+
+E # 43 t 75 m 2 ce 41 msg 80
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 80 tid 80 eid 80 etid 80 c omnetpp::cMessage n OK pe 43
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 42
+DM id 75 tid 75 eid 75 etid 75 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 42
+CM id 84 tid 84 eid 84 etid 84 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 84 tid 84 eid 84 etid 84 c Message n "Ceci vient de Ordi1" pe 43 cid 85
+BS id 85 tid 84 eid 85 etid 84 c Message n "Ceci vient de Ordi1" pe 43
+SH sm 2 sg 3 pd 5
+ES t 80
+CL id 85 tid 84 eid 85 etid 84 c Message n "Ceci vient de Ordi1" pe 43 cid 86
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 43
+ES t 80
+
+E # 44 t 75 m 3 ce 42 msg 82
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 82 tid 75 eid 82 etid 75 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 44
+CM id 87 tid 87 eid 87 etid 87 c omnetpp::cMessage n OK pe -1
+BS id 87 tid 87 eid 87 etid 87 c omnetpp::cMessage n OK pe 44
+SH sm 3 sg 3 pd 5
+ES t 80
+CL id 87 tid 87 eid 87 etid 87 c omnetpp::cMessage n OK pe 44 cid 88
+
+E # 45 t 80 m 3 ce 43 msg 85
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 85 tid 84 eid 85 etid 84 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 45
+CM id 89 tid 89 eid 89 etid 89 c omnetpp::cMessage n OK pe -1
+BS id 89 tid 89 eid 89 etid 89 c omnetpp::cMessage n OK pe 45
+SH sm 3 sg 3 pd 5
+ES t 85
+CL id 89 tid 89 eid 89 etid 89 c omnetpp::cMessage n OK pe 45 cid 90
+
+E # 46 t 80 m 2 ce 43 msg 0
+- INFO (Sender)Groupe3.Ordi1: Delai depasse; Renvoi du message...
+CL id 84 tid 84 eid 84 etid 84 c Message n "Ceci vient de Ordi1" pe 43 cid 91
+BS id 91 tid 84 eid 91 etid 84 c Message n "Ceci vient de Ordi1" pe 46
+SH sm 2 sg 3 pd 5
+ES t 85
+CL id 91 tid 84 eid 91 etid 84 c Message n "Ceci vient de Ordi1" pe 46 cid 92
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 46
+ES t 85
+
+E # 47 t 80 m 2 ce 44 msg 87
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 87 tid 87 eid 87 etid 87 c omnetpp::cMessage n OK pe 47
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 46
+DM id 84 tid 84 eid 84 etid 84 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 46
+CM id 93 tid 93 eid 93 etid 93 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 93 tid 93 eid 93 etid 93 c Message n "Ceci vient de Ordi1" pe 47 cid 94
+BS id 94 tid 93 eid 94 etid 93 c Message n "Ceci vient de Ordi1" pe 47
+SH sm 2 sg 3 pd 5
+ES t 85
+CL id 94 tid 93 eid 94 etid 93 c Message n "Ceci vient de Ordi1" pe 47 cid 95
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 47
+ES t 85
+
+E # 48 t 85 m 2 ce 45 msg 89
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 89 tid 89 eid 89 etid 89 c omnetpp::cMessage n OK pe 48
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 47
+DM id 93 tid 93 eid 93 etid 93 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 47
+CM id 96 tid 96 eid 96 etid 96 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 96 tid 96 eid 96 etid 96 c Message n "Ceci vient de Ordi1" pe 48 cid 97
+BS id 97 tid 96 eid 97 etid 96 c Message n "Ceci vient de Ordi1" pe 48
+SH sm 2 sg 3 pd 5
+ES t 90
+CL id 97 tid 96 eid 97 etid 96 c Message n "Ceci vient de Ordi1" pe 48 cid 98
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 48
+ES t 90
+
+E # 49 t 85 m 3 ce 46 msg 91
+- INFO (Receiver)Groupe3.Ordi2: Message perdu: Ceci vient de Ordi1
+BU id 3 txt Perdu!
+DM id 91 tid 84 eid 91 etid 84 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 49
+
+E # 50 t 85 m 3 ce 47 msg 94
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 94 tid 93 eid 94 etid 93 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 50
+CM id 99 tid 99 eid 99 etid 99 c omnetpp::cMessage n OK pe -1
+BS id 99 tid 99 eid 99 etid 99 c omnetpp::cMessage n OK pe 50
+SH sm 3 sg 3 pd 5
+ES t 90
+CL id 99 tid 99 eid 99 etid 99 c omnetpp::cMessage n OK pe 50 cid 100
+
+E # 51 t 90 m 3 ce 48 msg 97
+- INFO (Receiver)Groupe3.Ordi2: Message perdu: Ceci vient de Ordi1
+BU id 3 txt Perdu!
+DM id 97 tid 96 eid 97 etid 96 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 51
+
+E # 52 t 90 m 2 ce 48 msg 0
+- INFO (Sender)Groupe3.Ordi1: Delai depasse; Renvoi du message...
+CL id 96 tid 96 eid 96 etid 96 c Message n "Ceci vient de Ordi1" pe 48 cid 101
+BS id 101 tid 96 eid 101 etid 96 c Message n "Ceci vient de Ordi1" pe 52
+SH sm 2 sg 3 pd 5
+ES t 95
+CL id 101 tid 96 eid 101 etid 96 c Message n "Ceci vient de Ordi1" pe 52 cid 102
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 52
+ES t 95
+
+E # 53 t 90 m 2 ce 50 msg 99
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 99 tid 99 eid 99 etid 99 c omnetpp::cMessage n OK pe 53
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 52
+DM id 96 tid 96 eid 96 etid 96 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 52
+CM id 103 tid 103 eid 103 etid 103 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 103 tid 103 eid 103 etid 103 c Message n "Ceci vient de Ordi1" pe 53 cid 104
+BS id 104 tid 103 eid 104 etid 103 c Message n "Ceci vient de Ordi1" pe 53
+SH sm 2 sg 3 pd 5
+ES t 95
+CL id 104 tid 103 eid 104 etid 103 c Message n "Ceci vient de Ordi1" pe 53 cid 105
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 53
+ES t 95
+
+E # 54 t 95 m 3 ce 52 msg 101
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 101 tid 96 eid 101 etid 96 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 54
+CM id 106 tid 106 eid 106 etid 106 c omnetpp::cMessage n OK pe -1
+BS id 106 tid 106 eid 106 etid 106 c omnetpp::cMessage n OK pe 54
+SH sm 3 sg 3 pd 5
+ES t 100
+CL id 106 tid 106 eid 106 etid 106 c omnetpp::cMessage n OK pe 54 cid 107
+
+E # 55 t 95 m 3 ce 53 msg 104
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 104 tid 103 eid 104 etid 103 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 55
+CM id 108 tid 108 eid 108 etid 108 c omnetpp::cMessage n OK pe -1
+BS id 108 tid 108 eid 108 etid 108 c omnetpp::cMessage n OK pe 55
+SH sm 3 sg 3 pd 5
+ES t 100
+CL id 108 tid 108 eid 108 etid 108 c omnetpp::cMessage n OK pe 55 cid 109
+
+E # 56 t 95 m 2 ce 53 msg 0
+- INFO (Sender)Groupe3.Ordi1: Delai depasse; Renvoi du message...
+CL id 103 tid 103 eid 103 etid 103 c Message n "Ceci vient de Ordi1" pe 53 cid 110
+BS id 110 tid 103 eid 110 etid 103 c Message n "Ceci vient de Ordi1" pe 56
+SH sm 2 sg 3 pd 5
+ES t 100
+CL id 110 tid 103 eid 110 etid 103 c Message n "Ceci vient de Ordi1" pe 56 cid 111
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 56
+ES t 100
+
+E # 57 t 100 m 2 ce 54 msg 106
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 106 tid 106 eid 106 etid 106 c omnetpp::cMessage n OK pe 57
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 56
+DM id 103 tid 103 eid 103 etid 103 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 56
+CM id 112 tid 112 eid 112 etid 112 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 112 tid 112 eid 112 etid 112 c Message n "Ceci vient de Ordi1" pe 57 cid 113
+BS id 113 tid 112 eid 113 etid 112 c Message n "Ceci vient de Ordi1" pe 57
+SH sm 2 sg 3 pd 5
+ES t 105
+CL id 113 tid 112 eid 113 etid 112 c Message n "Ceci vient de Ordi1" pe 57 cid 114
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 57
+ES t 105
+
+E # 58 t 100 m 2 ce 55 msg 108
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 108 tid 108 eid 108 etid 108 c omnetpp::cMessage n OK pe 58
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 57
+DM id 112 tid 112 eid 112 etid 112 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 57
+CM id 115 tid 115 eid 115 etid 115 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 115 tid 115 eid 115 etid 115 c Message n "Ceci vient de Ordi1" pe 58 cid 116
+BS id 116 tid 115 eid 116 etid 115 c Message n "Ceci vient de Ordi1" pe 58
+SH sm 2 sg 3 pd 5
+ES t 105
+CL id 116 tid 115 eid 116 etid 115 c Message n "Ceci vient de Ordi1" pe 58 cid 117
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 58
+ES t 105
+
+E # 59 t 100 m 3 ce 56 msg 110
+- INFO (Receiver)Groupe3.Ordi2: Message perdu: Ceci vient de Ordi1
+BU id 3 txt Perdu!
+DM id 110 tid 103 eid 110 etid 103 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 59
+
+E # 60 t 105 m 3 ce 57 msg 113
+- INFO (Receiver)Groupe3.Ordi2: Message perdu: Ceci vient de Ordi1
+BU id 3 txt Perdu!
+DM id 113 tid 112 eid 113 etid 112 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 60
+
+E # 61 t 105 m 3 ce 58 msg 116
+- INFO (Receiver)Groupe3.Ordi2: Message perdu: Ceci vient de Ordi1
+BU id 3 txt Perdu!
+DM id 116 tid 115 eid 116 etid 115 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 61
+
+E # 62 t 105 m 2 ce 58 msg 0
+- INFO (Sender)Groupe3.Ordi1: Delai depasse; Renvoi du message...
+CL id 115 tid 115 eid 115 etid 115 c Message n "Ceci vient de Ordi1" pe 58 cid 118
+BS id 118 tid 115 eid 118 etid 115 c Message n "Ceci vient de Ordi1" pe 62
+SH sm 2 sg 3 pd 5
+ES t 110
+CL id 118 tid 115 eid 118 etid 115 c Message n "Ceci vient de Ordi1" pe 62 cid 119
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 62
+ES t 110
+
+E # 63 t 110 m 3 ce 62 msg 118
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 118 tid 115 eid 118 etid 115 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 63
+CM id 120 tid 120 eid 120 etid 120 c omnetpp::cMessage n OK pe -1
+BS id 120 tid 120 eid 120 etid 120 c omnetpp::cMessage n OK pe 63
+SH sm 3 sg 3 pd 5
+ES t 115
+CL id 120 tid 120 eid 120 etid 120 c omnetpp::cMessage n OK pe 63 cid 121
+
+E # 64 t 110 m 2 ce 62 msg 0
+- INFO (Sender)Groupe3.Ordi1: Delai depasse; Renvoi du message...
+CL id 115 tid 115 eid 115 etid 115 c Message n "Ceci vient de Ordi1" pe 62 cid 122
+BS id 122 tid 115 eid 122 etid 115 c Message n "Ceci vient de Ordi1" pe 64
+SH sm 2 sg 3 pd 5
+ES t 115
+CL id 122 tid 115 eid 122 etid 115 c Message n "Ceci vient de Ordi1" pe 64 cid 123
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 64
+ES t 115
+
+E # 65 t 115 m 2 ce 63 msg 120
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 120 tid 120 eid 120 etid 120 c omnetpp::cMessage n OK pe 65
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 64
+DM id 115 tid 115 eid 115 etid 115 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 64
+CM id 124 tid 124 eid 124 etid 124 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 124 tid 124 eid 124 etid 124 c Message n "Ceci vient de Ordi1" pe 65 cid 125
+BS id 125 tid 124 eid 125 etid 124 c Message n "Ceci vient de Ordi1" pe 65
+SH sm 2 sg 3 pd 5
+ES t 120
+CL id 125 tid 124 eid 125 etid 124 c Message n "Ceci vient de Ordi1" pe 65 cid 126
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 65
+ES t 120
+
+E # 66 t 115 m 3 ce 64 msg 122
+- INFO (Receiver)Groupe3.Ordi2: Message perdu: Ceci vient de Ordi1
+BU id 3 txt Perdu!
+DM id 122 tid 115 eid 122 etid 115 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 66
+
+E # 67 t 120 m 3 ce 65 msg 125
+- INFO (Receiver)Groupe3.Ordi2: Message perdu: Ceci vient de Ordi1
+BU id 3 txt Perdu!
+DM id 125 tid 124 eid 125 etid 124 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 67
+
+E # 68 t 120 m 2 ce 65 msg 0
+- INFO (Sender)Groupe3.Ordi1: Delai depasse; Renvoi du message...
+CL id 124 tid 124 eid 124 etid 124 c Message n "Ceci vient de Ordi1" pe 65 cid 127
+BS id 127 tid 124 eid 127 etid 124 c Message n "Ceci vient de Ordi1" pe 68
+SH sm 2 sg 3 pd 5
+ES t 125
+CL id 127 tid 124 eid 127 etid 124 c Message n "Ceci vient de Ordi1" pe 68 cid 128
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 68
+ES t 125
+
+E # 69 t 125 m 3 ce 68 msg 127
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 127 tid 124 eid 127 etid 124 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 69
+CM id 129 tid 129 eid 129 etid 129 c omnetpp::cMessage n OK pe -1
+BS id 129 tid 129 eid 129 etid 129 c omnetpp::cMessage n OK pe 69
+SH sm 3 sg 3 pd 5
+ES t 130
+CL id 129 tid 129 eid 129 etid 129 c omnetpp::cMessage n OK pe 69 cid 130
+
+E # 70 t 125 m 2 ce 68 msg 0
+- INFO (Sender)Groupe3.Ordi1: Delai depasse; Renvoi du message...
+CL id 124 tid 124 eid 124 etid 124 c Message n "Ceci vient de Ordi1" pe 68 cid 131
+BS id 131 tid 124 eid 131 etid 124 c Message n "Ceci vient de Ordi1" pe 70
+SH sm 2 sg 3 pd 5
+ES t 130
+CL id 131 tid 124 eid 131 etid 124 c Message n "Ceci vient de Ordi1" pe 70 cid 132
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 70
+ES t 130
+
+E # 71 t 130 m 2 ce 69 msg 129
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 129 tid 129 eid 129 etid 129 c omnetpp::cMessage n OK pe 71
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 70
+DM id 124 tid 124 eid 124 etid 124 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 70
+CM id 133 tid 133 eid 133 etid 133 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 133 tid 133 eid 133 etid 133 c Message n "Ceci vient de Ordi1" pe 71 cid 134
+BS id 134 tid 133 eid 134 etid 133 c Message n "Ceci vient de Ordi1" pe 71
+SH sm 2 sg 3 pd 5
+ES t 135
+CL id 134 tid 133 eid 134 etid 133 c Message n "Ceci vient de Ordi1" pe 71 cid 135
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 71
+ES t 135
+
+E # 72 t 130 m 3 ce 70 msg 131
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 131 tid 124 eid 131 etid 124 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 72
+CM id 136 tid 136 eid 136 etid 136 c omnetpp::cMessage n OK pe -1
+BS id 136 tid 136 eid 136 etid 136 c omnetpp::cMessage n OK pe 72
+SH sm 3 sg 3 pd 5
+ES t 135
+CL id 136 tid 136 eid 136 etid 136 c omnetpp::cMessage n OK pe 72 cid 137
+
+E # 73 t 135 m 3 ce 71 msg 134
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 134 tid 133 eid 134 etid 133 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 73
+CM id 138 tid 138 eid 138 etid 138 c omnetpp::cMessage n OK pe -1
+BS id 138 tid 138 eid 138 etid 138 c omnetpp::cMessage n OK pe 73
+SH sm 3 sg 3 pd 5
+ES t 140
+CL id 138 tid 138 eid 138 etid 138 c omnetpp::cMessage n OK pe 73 cid 139
+
+E # 74 t 135 m 2 ce 71 msg 0
+- INFO (Sender)Groupe3.Ordi1: Delai depasse; Renvoi du message...
+CL id 133 tid 133 eid 133 etid 133 c Message n "Ceci vient de Ordi1" pe 71 cid 140
+BS id 140 tid 133 eid 140 etid 133 c Message n "Ceci vient de Ordi1" pe 74
+SH sm 2 sg 3 pd 5
+ES t 140
+CL id 140 tid 133 eid 140 etid 133 c Message n "Ceci vient de Ordi1" pe 74 cid 141
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 74
+ES t 140
+
+E # 75 t 135 m 2 ce 72 msg 136
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 136 tid 136 eid 136 etid 136 c omnetpp::cMessage n OK pe 75
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 74
+DM id 133 tid 133 eid 133 etid 133 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 74
+CM id 142 tid 142 eid 142 etid 142 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 142 tid 142 eid 142 etid 142 c Message n "Ceci vient de Ordi1" pe 75 cid 143
+BS id 143 tid 142 eid 143 etid 142 c Message n "Ceci vient de Ordi1" pe 75
+SH sm 2 sg 3 pd 5
+ES t 140
+CL id 143 tid 142 eid 143 etid 142 c Message n "Ceci vient de Ordi1" pe 75 cid 144
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 75
+ES t 140
+
+E # 76 t 140 m 2 ce 73 msg 138
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 138 tid 138 eid 138 etid 138 c omnetpp::cMessage n OK pe 76
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 75
+DM id 142 tid 142 eid 142 etid 142 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 75
+CM id 145 tid 145 eid 145 etid 145 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 145 tid 145 eid 145 etid 145 c Message n "Ceci vient de Ordi1" pe 76 cid 146
+BS id 146 tid 145 eid 146 etid 145 c Message n "Ceci vient de Ordi1" pe 76
+SH sm 2 sg 3 pd 5
+ES t 145
+CL id 146 tid 145 eid 146 etid 145 c Message n "Ceci vient de Ordi1" pe 76 cid 147
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 76
+ES t 145
+
+E # 77 t 140 m 3 ce 74 msg 140
+- INFO (Receiver)Groupe3.Ordi2: Message perdu: Ceci vient de Ordi1
+BU id 3 txt Perdu!
+DM id 140 tid 133 eid 140 etid 133 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 77
+
+E # 78 t 140 m 3 ce 75 msg 143
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 143 tid 142 eid 143 etid 142 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 78
+CM id 148 tid 148 eid 148 etid 148 c omnetpp::cMessage n OK pe -1
+BS id 148 tid 148 eid 148 etid 148 c omnetpp::cMessage n OK pe 78
+SH sm 3 sg 3 pd 5
+ES t 145
+CL id 148 tid 148 eid 148 etid 148 c omnetpp::cMessage n OK pe 78 cid 149
+
+E # 79 t 145 m 3 ce 76 msg 146
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 146 tid 145 eid 146 etid 145 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 79
+CM id 150 tid 150 eid 150 etid 150 c omnetpp::cMessage n OK pe -1
+BS id 150 tid 150 eid 150 etid 150 c omnetpp::cMessage n OK pe 79
+SH sm 3 sg 3 pd 5
+ES t 150
+CL id 150 tid 150 eid 150 etid 150 c omnetpp::cMessage n OK pe 79 cid 151
+
+E # 80 t 145 m 2 ce 76 msg 0
+- INFO (Sender)Groupe3.Ordi1: Delai depasse; Renvoi du message...
+CL id 145 tid 145 eid 145 etid 145 c Message n "Ceci vient de Ordi1" pe 76 cid 152
+BS id 152 tid 145 eid 152 etid 145 c Message n "Ceci vient de Ordi1" pe 80
+SH sm 2 sg 3 pd 5
+ES t 150
+CL id 152 tid 145 eid 152 etid 145 c Message n "Ceci vient de Ordi1" pe 80 cid 153
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 80
+ES t 150
+
+E # 81 t 145 m 2 ce 78 msg 148
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 148 tid 148 eid 148 etid 148 c omnetpp::cMessage n OK pe 81
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 80
+DM id 145 tid 145 eid 145 etid 145 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 80
+CM id 154 tid 154 eid 154 etid 154 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 154 tid 154 eid 154 etid 154 c Message n "Ceci vient de Ordi1" pe 81 cid 155
+BS id 155 tid 154 eid 155 etid 154 c Message n "Ceci vient de Ordi1" pe 81
+SH sm 2 sg 3 pd 5
+ES t 150
+CL id 155 tid 154 eid 155 etid 154 c Message n "Ceci vient de Ordi1" pe 81 cid 156
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 81
+ES t 150
+
+E # 82 t 150 m 2 ce 79 msg 150
+- INFO (Sender)Groupe3.Ordi1: Message: OK
+DM id 150 tid 150 eid 150 etid 150 c omnetpp::cMessage n OK pe 82
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 81
+DM id 154 tid 154 eid 154 etid 154 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 81
+CM id 157 tid 157 eid 157 etid 157 c omnetpp::cMessage n "Ceci vient de Ordi1" pe -1
+CL id 157 tid 157 eid 157 etid 157 c Message n "Ceci vient de Ordi1" pe 82 cid 158
+BS id 158 tid 157 eid 158 etid 157 c Message n "Ceci vient de Ordi1" pe 82
+SH sm 2 sg 3 pd 5
+ES t 155
+CL id 158 tid 157 eid 158 etid 157 c Message n "Ceci vient de Ordi1" pe 82 cid 159
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n Timeout pe 82
+ES t 155
+
+E # 83 t 150 m 3 ce 80 msg 152
+- INFO (Receiver)Groupe3.Ordi2: (Message)Ceci vient de Ordi1: Message recu .
+DM id 152 tid 145 eid 152 etid 145 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 83
+CM id 160 tid 160 eid 160 etid 160 c omnetpp::cMessage n OK pe -1
+BS id 160 tid 160 eid 160 etid 160 c omnetpp::cMessage n OK pe 83
+SH sm 3 sg 3 pd 5
+ES t 155
+CL id 160 tid 160 eid 160 etid 160 c omnetpp::cMessage n OK pe 83 cid 161
+
+E # 84 t 150 m 3 ce 81 msg 155
+- INFO (Receiver)Groupe3.Ordi2: Message perdu: Ceci vient de Ordi1
+BU id 3 txt Perdu!
+DM id 155 tid 154 eid 155 etid 154 c omnetpp::cMessage n "Ceci vient de Ordi1" pe 84
+SE e 0 c 38 m "Simulation time limit reached -- at t=150s, event #85"
