@@ -1,0 +1,27 @@
+run,type,module,name,attrname,attrvalue,value,count,sumweights,mean,stddev,min,max,binedges,binvalues
+Conf1-0-20190511-12:52:15-4128,runattr,,,configname,Conf1,,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,runattr,,,datetime,20190511-12:52:15,,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,runattr,,,experiment,Conf1,,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,runattr,,,inifile,omnetpp.ini,,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,runattr,,,iterationvars,,,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,runattr,,,iterationvarsf,,,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,runattr,,,measurement,,,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,runattr,,,network,reseau,,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,runattr,,,processid,4128,,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,runattr,,,repetition,0,,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,runattr,,,replication,#0,,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,runattr,,,resultdir,results,,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,runattr,,,runnumber,0,,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,runattr,,,seedset,0,,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,histogram,reseau.ordi1.out.channel,messagesDiscarded:histogram,,,,0,,NaN,NaN,NaN,NaN," 0 1"," 0"
+Conf1-0-20190511-12:52:15-4128,attr,reseau.ordi1.out.channel,messagesDiscarded:histogram,interpolationmode,none,,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,attr,reseau.ordi1.out.channel,messagesDiscarded:histogram,source,constant1(messageDiscarded),,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,histogram,reseau.ordi1.out.channel,messages:histogram,,,,31,,1,0,1,1," 0 1 2"," 0 31"
+Conf1-0-20190511-12:52:15-4128,attr,reseau.ordi1.out.channel,messages:histogram,interpolationmode,none,,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,attr,reseau.ordi1.out.channel,messages:histogram,source,constant1(messageSent),,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,histogram,reseau.ordi2.out.channel,messagesDiscarded:histogram,,,,0,,NaN,NaN,NaN,NaN," 0 1"," 0"
+Conf1-0-20190511-12:52:15-4128,attr,reseau.ordi2.out.channel,messagesDiscarded:histogram,interpolationmode,none,,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,attr,reseau.ordi2.out.channel,messagesDiscarded:histogram,source,constant1(messageDiscarded),,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,histogram,reseau.ordi2.out.channel,messages:histogram,,,,0,,NaN,NaN,NaN,NaN," 0 1"," 0"
+Conf1-0-20190511-12:52:15-4128,attr,reseau.ordi2.out.channel,messages:histogram,interpolationmode,none,,,,,,,,,
+Conf1-0-20190511-12:52:15-4128,attr,reseau.ordi2.out.channel,messages:histogram,source,constant1(messageSent),,,,,,,,,
