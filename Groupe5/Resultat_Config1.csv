@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ** Initializing network
 
 Reseau5.Ordi1.out.channel: Initializing channel Reseau5.Ordi1.out.channel, stage 0
@@ -191,3 +192,198 @@ INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
 <!> Simulation time limit reached -- at t=150s, event #61
 
 ** Calling finish() methods of modules
+=======
+** Initializing network
+
+Reseau5.Ordi1.out.channel: Initializing channel Reseau5.Ordi1.out.channel, stage 0
+Reseau5.Ordi2.out.channel: Initializing channel Reseau5.Ordi2.out.channel, stage 0
+Initializing module Reseau5, stage 0
+Reseau5.Ordi1: Initializing module Reseau5.Ordi1, stage 0
+INFO (Ordi_1)Reseau5.Ordi1: Reseau5.Ordi1: Initialisation du message
+Reseau5.Ordi2: Initializing module Reseau5.Ordi2, stage 0
+** Event #1  t=5  Reseau5.Ordi2 (Ordi_2, id=3)  on Message de ordinateur 1  (Echange, id=2)
+
+INFO (Ordi_2)Reseau5.Ordi2: (Echange)Message de ordinateur 1  recu, renvoie ack .
+** Event #2  t=5  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #3  t=10  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=4)
+
+INFO (Ordi_2)Reseau5.Ordi2: (Echange)Ceci vient de ordi1.  recu, renvoie ack .
+** Event #4  t=10  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #5  t=15  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=6)
+
+INFO (Ordi_2)Reseau5.Ordi2: (Echange)Ceci vient de ordi1.  recu, renvoie ack .
+** Event #6  t=15  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #7  t=20  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=8)
+
+INFO (Ordi_2)Reseau5.Ordi2: (Echange)Ceci vient de ordi1.  recu, renvoie ack .
+** Event #8  t=20  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #9  t=25  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=10)
+
+INFO (Ordi_2)Reseau5.Ordi2: (Echange)Ceci vient de ordi1.  recu, renvoie ack .
+** Event #10  t=25  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #11  t=30  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=12)
+
+INFO (Ordi_2)Reseau5.Ordi2: (Echange)Ceci vient de ordi1.  recu, renvoie ack .
+** Event #12  t=30  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #13  t=35  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=14)
+
+INFO (Ordi_2)Reseau5.Ordi2: (Echange)Ceci vient de ordi1.  recu, renvoie ack .
+** Event #14  t=35  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #15  t=40  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=16)
+
+INFO (Ordi_2)Reseau5.Ordi2: (Echange)Ceci vient de ordi1.  recu, renvoie ack .
+** Event #16  t=40  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #17  t=45  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=18)
+
+INFO (Ordi_2)Reseau5.Ordi2: "message" perdu (Echange)Ceci vient de ordi1.
+** Event #18  t=45  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #19  t=50  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=20)
+
+INFO (Ordi_2)Reseau5.Ordi2: (Echange)Ceci vient de ordi1.  recu, renvoie ack .
+** Event #20  t=50  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #21  t=55  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=22)
+
+INFO (Ordi_2)Reseau5.Ordi2: (Echange)Ceci vient de ordi1.  recu, renvoie ack .
+** Event #22  t=55  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #23  t=60  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=24)
+
+INFO (Ordi_2)Reseau5.Ordi2: "message" perdu (Echange)Ceci vient de ordi1.
+** Event #24  t=60  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #25  t=65  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=26)
+
+INFO (Ordi_2)Reseau5.Ordi2: "message" perdu (Echange)Ceci vient de ordi1.
+** Event #26  t=65  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #27  t=70  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=28)
+
+INFO (Ordi_2)Reseau5.Ordi2: "message" perdu (Echange)Ceci vient de ordi1.
+** Event #28  t=70  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #29  t=75  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=30)
+
+INFO (Ordi_2)Reseau5.Ordi2: (Echange)Ceci vient de ordi1.  recu, renvoie ack .
+** Event #30  t=75  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #31  t=80  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=32)
+
+INFO (Ordi_2)Reseau5.Ordi2: "message" perdu (Echange)Ceci vient de ordi1.
+** Event #32  t=80  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #33  t=85  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=34)
+
+INFO (Ordi_2)Reseau5.Ordi2: (Echange)Ceci vient de ordi1.  recu, renvoie ack .
+** Event #34  t=85  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #35  t=90  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=36)
+
+INFO (Ordi_2)Reseau5.Ordi2: "message" perdu (Echange)Ceci vient de ordi1.
+** Event #36  t=90  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #37  t=95  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=38)
+
+INFO (Ordi_2)Reseau5.Ordi2: "message" perdu (Echange)Ceci vient de ordi1.
+** Event #38  t=95  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #39  t=100  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=40)
+
+INFO (Ordi_2)Reseau5.Ordi2: "message" perdu (Echange)Ceci vient de ordi1.
+** Event #40  t=100  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #41  t=105  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=42)
+
+INFO (Ordi_2)Reseau5.Ordi2: (Echange)Ceci vient de ordi1.  recu, renvoie ack .
+** Event #42  t=105  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #43  t=110  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=44)
+
+INFO (Ordi_2)Reseau5.Ordi2: (Echange)Ceci vient de ordi1.  recu, renvoie ack .
+** Event #44  t=110  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #45  t=115  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=46)
+
+INFO (Ordi_2)Reseau5.Ordi2: (Echange)Ceci vient de ordi1.  recu, renvoie ack .
+** Event #46  t=115  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #47  t=120  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=48)
+
+INFO (Ordi_2)Reseau5.Ordi2: "message" perdu (Echange)Ceci vient de ordi1.
+** Event #48  t=120  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #49  t=125  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=50)
+
+INFO (Ordi_2)Reseau5.Ordi2: (Echange)Ceci vient de ordi1.  recu, renvoie ack .
+** Event #50  t=125  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #51  t=130  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=52)
+
+INFO (Ordi_2)Reseau5.Ordi2: "message" perdu (Echange)Ceci vient de ordi1.
+** Event #52  t=130  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #53  t=135  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=54)
+
+INFO (Ordi_2)Reseau5.Ordi2: (Echange)Ceci vient de ordi1.  recu, renvoie ack .
+** Event #54  t=135  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #55  t=140  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=56)
+
+INFO (Ordi_2)Reseau5.Ordi2: (Echange)Ceci vient de ordi1.  recu, renvoie ack .
+** Event #56  t=140  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #57  t=145  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=58)
+
+INFO (Ordi_2)Reseau5.Ordi2: "message" perdu (Echange)Ceci vient de ordi1.
+** Event #58  t=145  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #59  t=150  Reseau5.Ordi2 (Ordi_2, id=3)  on Ceci vient de ordi1.  (Echange, id=60)
+
+INFO (Ordi_2)Reseau5.Ordi2: "message" perdu (Echange)Ceci vient de ordi1.
+** Event #60  t=150  Reseau5.Ordi1 (Ordi_1, id=2)  on selfmsg Ce message provient de Ordi_1.   (Echange, id=1)
+
+INFO (Ordi_1)Reseau5.Ordi1: Ceci vient de ordi1
+** Event #61  t=150   on endsimulation (omnetpp::cEndSimulationEvent)
+
+<!> Simulation time limit reached -- at t=150s, event #61
+
+** Calling finish() methods of modules
+>>>>>>> d5904819cc100adf91884c3a8cb39cc199cb3a0b

@@ -13,6 +13,7 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
+<<<<<<< HEAD
 #ifndef NOEUD_H_
 #define NOEUD_H_
 
@@ -23,3 +24,15 @@ public:
 };
 
 #endif /* NOEUD_H_ */
+=======
+#ifndef NOEUD_H_
+#define NOEUD_H_
+
+class noeud {
+public:
+    noeud();
+    virtual ~noeud();
+};
+
+#endif /* NOEUD_H_ */
+>>>>>>> d5904819cc100adf91884c3a8cb39cc199cb3a0b

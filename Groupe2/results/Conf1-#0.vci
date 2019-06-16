@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 file 653 1560597252                                             
 version 2
 run Conf1-0-20190615-12:13:47-3908
@@ -21,3 +22,28 @@ attr interpolationmode none
 attr source constant1(messageSent)
 0	482 169 0 30 0 75 16 1 1 16 16
 
+=======
+file 653 1560597252                                             
+version 2
+run Conf1-0-20190615-12:13:47-3908
+attr configname Conf1
+attr datetime 20190615-12:13:47
+attr experiment Conf1
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network reseau
+attr processid 3908
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 0 reseau.ordi1.out.channel messages:vector ETV
+attr interpolationmode none
+attr source constant1(messageSent)
+0	482 169 0 30 0 75 16 1 1 16 16
+
+>>>>>>> d5904819cc100adf91884c3a8cb39cc199cb3a0b

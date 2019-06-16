@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 E # 0 t 0 m 1 ce -1 msg -1
 SB v 1281 rid configuration1-0-20190616-14:47:25-12872 b 1000
 KF p -1 c "" s ""
@@ -479,3 +480,486 @@ CL id 124 tid 124 eid 124 etid 124 c Message n "" pe 60 cid 125
 BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 60
 ES t 155
 SE e 0 c 38 m "Simulation time limit reached -- at t=150s, event #61"
+=======
+E # 0 t 0 m 1 ce -1 msg -1
+SB v 1281 rid configuration1-0-20190616-14:47:25-12872 b 1000
+KF p -1 c "" s ""
+MC id 1 c omnetpp::cModule t Configuration1 n Configuration1 cm 1
+MS id 1 d ""
+MC id 2 c Ordi1 t Ordi1 pid 1 n ordi1
+GC m 2 g 0 n in o 0
+GC m 2 g 3 n out o 1
+MS id 2 d p=78,280;i=device/laptop,grey
+MC id 3 c Ordi2 t Ordi2 pid 1 n ordi2
+GC m 3 g 0 n in o 0
+GC m 3 g 3 n out o 1
+MS id 3 d p=171,121;i=device/laptop,grey
+CC sm 2 sg 3 dm 3 dg 0
+CS sm 2 sg 3 d ""
+CC sm 3 sg 3 dm 2 dg 0
+CS sm 3 sg 3 d ""
+MB sm 1 tm 2 m initialize(0)
+CM id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe -1
+- INFO (Ordi1)Configuration1.ordi1: Sending initial message
+CM id 64 tid 64 eid 64 etid 64 c omnetpp::cMessage n "" pe -1
+BS id 64 tid 64 eid 64 etid 64 c Message n "" pe 0
+SH sm 2 sg 3 pd 0.1
+ES t 0.1
+CL id 64 tid 64 eid 64 etid 64 c Message n "" pe 0 cid 65
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 0
+ES t 5
+ME
+MB sm 1 tm 3 m initialize(0)
+ME
+
+E # 1 t 0.1 m 3 ce 0 msg 64
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 64 tid 64 eid 64 etid 64 c omnetpp::cMessage n "" pe 1
+
+E # 2 t 5 m 2 ce 0 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 66 tid 66 eid 66 etid 66 c omnetpp::cMessage n "" pe -1
+BS id 66 tid 66 eid 66 etid 66 c Message n "" pe 2
+SH sm 2 sg 3 pd 0.1
+ES t 5.1
+CL id 66 tid 66 eid 66 etid 66 c Message n "" pe 2 cid 67
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 2
+ES t 10
+
+E # 3 t 5.1 m 3 ce 2 msg 66
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 66 tid 66 eid 66 etid 66 c omnetpp::cMessage n "" pe 3
+
+E # 4 t 10 m 2 ce 2 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 68 tid 68 eid 68 etid 68 c omnetpp::cMessage n "" pe -1
+BS id 68 tid 68 eid 68 etid 68 c Message n "" pe 4
+SH sm 2 sg 3 pd 0.1
+ES t 10.1
+CL id 68 tid 68 eid 68 etid 68 c Message n "" pe 4 cid 69
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 4
+ES t 15
+
+E # 5 t 10.1 m 3 ce 4 msg 68
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 68 tid 68 eid 68 etid 68 c omnetpp::cMessage n "" pe 5
+
+E # 6 t 15 m 2 ce 4 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 70 tid 70 eid 70 etid 70 c omnetpp::cMessage n "" pe -1
+BS id 70 tid 70 eid 70 etid 70 c Message n "" pe 6
+SH sm 2 sg 3 pd 0.1
+ES t 15.1
+CL id 70 tid 70 eid 70 etid 70 c Message n "" pe 6 cid 71
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 6
+ES t 20
+
+E # 7 t 15.1 m 3 ce 6 msg 70
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 70 tid 70 eid 70 etid 70 c omnetpp::cMessage n "" pe 7
+
+E # 8 t 20 m 2 ce 6 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 72 tid 72 eid 72 etid 72 c omnetpp::cMessage n "" pe -1
+BS id 72 tid 72 eid 72 etid 72 c Message n "" pe 8
+SH sm 2 sg 3 pd 0.1
+ES t 20.1
+CL id 72 tid 72 eid 72 etid 72 c Message n "" pe 8 cid 73
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 8
+ES t 25
+
+E # 9 t 20.1 m 3 ce 8 msg 72
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 72 tid 72 eid 72 etid 72 c omnetpp::cMessage n "" pe 9
+
+E # 10 t 25 m 2 ce 8 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 74 tid 74 eid 74 etid 74 c omnetpp::cMessage n "" pe -1
+BS id 74 tid 74 eid 74 etid 74 c Message n "" pe 10
+SH sm 2 sg 3 pd 0.1
+ES t 25.1
+CL id 74 tid 74 eid 74 etid 74 c Message n "" pe 10 cid 75
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 10
+ES t 30
+
+E # 11 t 25.1 m 3 ce 10 msg 74
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 74 tid 74 eid 74 etid 74 c omnetpp::cMessage n "" pe 11
+
+E # 12 t 30 m 2 ce 10 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 76 tid 76 eid 76 etid 76 c omnetpp::cMessage n "" pe -1
+BS id 76 tid 76 eid 76 etid 76 c Message n "" pe 12
+SH sm 2 sg 3 pd 0.1
+ES t 30.1
+CL id 76 tid 76 eid 76 etid 76 c Message n "" pe 12 cid 77
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 12
+ES t 35
+
+E # 13 t 30.1 m 3 ce 12 msg 76
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 76 tid 76 eid 76 etid 76 c omnetpp::cMessage n "" pe 13
+
+E # 14 t 35 m 2 ce 12 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 78 tid 78 eid 78 etid 78 c omnetpp::cMessage n "" pe -1
+BS id 78 tid 78 eid 78 etid 78 c Message n "" pe 14
+SH sm 2 sg 3 pd 0.1
+ES t 35.1
+CL id 78 tid 78 eid 78 etid 78 c Message n "" pe 14 cid 79
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 14
+ES t 40
+
+E # 15 t 35.1 m 3 ce 14 msg 78
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 78 tid 78 eid 78 etid 78 c omnetpp::cMessage n "" pe 15
+
+E # 16 t 40 m 2 ce 14 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 80 tid 80 eid 80 etid 80 c omnetpp::cMessage n "" pe -1
+BS id 80 tid 80 eid 80 etid 80 c Message n "" pe 16
+SH sm 2 sg 3 pd 0.1
+ES t 40.1
+CL id 80 tid 80 eid 80 etid 80 c Message n "" pe 16 cid 81
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 16
+ES t 45
+
+E # 17 t 40.1 m 3 ce 16 msg 80
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 80 tid 80 eid 80 etid 80 c omnetpp::cMessage n "" pe 17
+
+E # 18 t 45 m 2 ce 16 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 82 tid 82 eid 82 etid 82 c omnetpp::cMessage n "" pe -1
+BS id 82 tid 82 eid 82 etid 82 c Message n "" pe 18
+SH sm 2 sg 3 pd 0.1
+ES t 45.1
+CL id 82 tid 82 eid 82 etid 82 c Message n "" pe 18 cid 83
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 18
+ES t 50
+
+E # 19 t 45.1 m 3 ce 18 msg 82
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 82 tid 82 eid 82 etid 82 c omnetpp::cMessage n "" pe 19
+
+E # 20 t 50 m 2 ce 18 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 84 tid 84 eid 84 etid 84 c omnetpp::cMessage n "" pe -1
+BS id 84 tid 84 eid 84 etid 84 c Message n "" pe 20
+SH sm 2 sg 3 pd 0.1
+ES t 50.1
+CL id 84 tid 84 eid 84 etid 84 c Message n "" pe 20 cid 85
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 20
+ES t 55
+
+E # 21 t 50.1 m 3 ce 20 msg 84
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 84 tid 84 eid 84 etid 84 c omnetpp::cMessage n "" pe 21
+
+E # 22 t 55 m 2 ce 20 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 86 tid 86 eid 86 etid 86 c omnetpp::cMessage n "" pe -1
+BS id 86 tid 86 eid 86 etid 86 c Message n "" pe 22
+SH sm 2 sg 3 pd 0.1
+ES t 55.1
+CL id 86 tid 86 eid 86 etid 86 c Message n "" pe 22 cid 87
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 22
+ES t 60
+
+E # 23 t 55.1 m 3 ce 22 msg 86
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 86 tid 86 eid 86 etid 86 c omnetpp::cMessage n "" pe 23
+
+E # 24 t 60 m 2 ce 22 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 88 tid 88 eid 88 etid 88 c omnetpp::cMessage n "" pe -1
+BS id 88 tid 88 eid 88 etid 88 c Message n "" pe 24
+SH sm 2 sg 3 pd 0.1
+ES t 60.1
+CL id 88 tid 88 eid 88 etid 88 c Message n "" pe 24 cid 89
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 24
+ES t 65
+
+E # 25 t 60.1 m 3 ce 24 msg 88
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 88 tid 88 eid 88 etid 88 c omnetpp::cMessage n "" pe 25
+
+E # 26 t 65 m 2 ce 24 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 90 tid 90 eid 90 etid 90 c omnetpp::cMessage n "" pe -1
+BS id 90 tid 90 eid 90 etid 90 c Message n "" pe 26
+SH sm 2 sg 3 pd 0.1
+ES t 65.1
+CL id 90 tid 90 eid 90 etid 90 c Message n "" pe 26 cid 91
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 26
+ES t 70
+
+E # 27 t 65.1 m 3 ce 26 msg 90
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 90 tid 90 eid 90 etid 90 c omnetpp::cMessage n "" pe 27
+
+E # 28 t 70 m 2 ce 26 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 92 tid 92 eid 92 etid 92 c omnetpp::cMessage n "" pe -1
+BS id 92 tid 92 eid 92 etid 92 c Message n "" pe 28
+SH sm 2 sg 3 pd 0.1
+ES t 70.1
+CL id 92 tid 92 eid 92 etid 92 c Message n "" pe 28 cid 93
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 28
+ES t 75
+
+E # 29 t 70.1 m 3 ce 28 msg 92
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 92 tid 92 eid 92 etid 92 c omnetpp::cMessage n "" pe 29
+
+E # 30 t 75 m 2 ce 28 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 94 tid 94 eid 94 etid 94 c omnetpp::cMessage n "" pe -1
+BS id 94 tid 94 eid 94 etid 94 c Message n "" pe 30
+SH sm 2 sg 3 pd 0.1
+ES t 75.1
+CL id 94 tid 94 eid 94 etid 94 c Message n "" pe 30 cid 95
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 30
+ES t 80
+
+E # 31 t 75.1 m 3 ce 30 msg 94
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 94 tid 94 eid 94 etid 94 c omnetpp::cMessage n "" pe 31
+
+E # 32 t 80 m 2 ce 30 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 96 tid 96 eid 96 etid 96 c omnetpp::cMessage n "" pe -1
+BS id 96 tid 96 eid 96 etid 96 c Message n "" pe 32
+SH sm 2 sg 3 pd 0.1
+ES t 80.1
+CL id 96 tid 96 eid 96 etid 96 c Message n "" pe 32 cid 97
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 32
+ES t 85
+
+E # 33 t 80.1 m 3 ce 32 msg 96
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 96 tid 96 eid 96 etid 96 c omnetpp::cMessage n "" pe 33
+
+E # 34 t 85 m 2 ce 32 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 98 tid 98 eid 98 etid 98 c omnetpp::cMessage n "" pe -1
+BS id 98 tid 98 eid 98 etid 98 c Message n "" pe 34
+SH sm 2 sg 3 pd 0.1
+ES t 85.1
+CL id 98 tid 98 eid 98 etid 98 c Message n "" pe 34 cid 99
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 34
+ES t 90
+
+E # 35 t 85.1 m 3 ce 34 msg 98
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 98 tid 98 eid 98 etid 98 c omnetpp::cMessage n "" pe 35
+
+E # 36 t 90 m 2 ce 34 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 100 tid 100 eid 100 etid 100 c omnetpp::cMessage n "" pe -1
+BS id 100 tid 100 eid 100 etid 100 c Message n "" pe 36
+SH sm 2 sg 3 pd 0.1
+ES t 90.1
+CL id 100 tid 100 eid 100 etid 100 c Message n "" pe 36 cid 101
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 36
+ES t 95
+
+E # 37 t 90.1 m 3 ce 36 msg 100
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 100 tid 100 eid 100 etid 100 c omnetpp::cMessage n "" pe 37
+
+E # 38 t 95 m 2 ce 36 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 102 tid 102 eid 102 etid 102 c omnetpp::cMessage n "" pe -1
+BS id 102 tid 102 eid 102 etid 102 c Message n "" pe 38
+SH sm 2 sg 3 pd 0.1
+ES t 95.1
+CL id 102 tid 102 eid 102 etid 102 c Message n "" pe 38 cid 103
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 38
+ES t 100
+
+E # 39 t 95.1 m 3 ce 38 msg 102
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 102 tid 102 eid 102 etid 102 c omnetpp::cMessage n "" pe 39
+
+E # 40 t 100 m 2 ce 38 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 104 tid 104 eid 104 etid 104 c omnetpp::cMessage n "" pe -1
+BS id 104 tid 104 eid 104 etid 104 c Message n "" pe 40
+SH sm 2 sg 3 pd 0.1
+ES t 100.1
+CL id 104 tid 104 eid 104 etid 104 c Message n "" pe 40 cid 105
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 40
+ES t 105
+
+E # 41 t 100.1 m 3 ce 40 msg 104
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 104 tid 104 eid 104 etid 104 c omnetpp::cMessage n "" pe 41
+
+E # 42 t 105 m 2 ce 40 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 106 tid 106 eid 106 etid 106 c omnetpp::cMessage n "" pe -1
+BS id 106 tid 106 eid 106 etid 106 c Message n "" pe 42
+SH sm 2 sg 3 pd 0.1
+ES t 105.1
+CL id 106 tid 106 eid 106 etid 106 c Message n "" pe 42 cid 107
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 42
+ES t 110
+
+E # 43 t 105.1 m 3 ce 42 msg 106
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 106 tid 106 eid 106 etid 106 c omnetpp::cMessage n "" pe 43
+
+E # 44 t 110 m 2 ce 42 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 108 tid 108 eid 108 etid 108 c omnetpp::cMessage n "" pe -1
+BS id 108 tid 108 eid 108 etid 108 c Message n "" pe 44
+SH sm 2 sg 3 pd 0.1
+ES t 110.1
+CL id 108 tid 108 eid 108 etid 108 c Message n "" pe 44 cid 109
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 44
+ES t 115
+
+E # 45 t 110.1 m 3 ce 44 msg 108
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 108 tid 108 eid 108 etid 108 c omnetpp::cMessage n "" pe 45
+
+E # 46 t 115 m 2 ce 44 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 110 tid 110 eid 110 etid 110 c omnetpp::cMessage n "" pe -1
+BS id 110 tid 110 eid 110 etid 110 c Message n "" pe 46
+SH sm 2 sg 3 pd 0.1
+ES t 115.1
+CL id 110 tid 110 eid 110 etid 110 c Message n "" pe 46 cid 111
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 46
+ES t 120
+
+E # 47 t 115.1 m 3 ce 46 msg 110
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 110 tid 110 eid 110 etid 110 c omnetpp::cMessage n "" pe 47
+
+E # 48 t 120 m 2 ce 46 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 112 tid 112 eid 112 etid 112 c omnetpp::cMessage n "" pe -1
+BS id 112 tid 112 eid 112 etid 112 c Message n "" pe 48
+SH sm 2 sg 3 pd 0.1
+ES t 120.1
+CL id 112 tid 112 eid 112 etid 112 c Message n "" pe 48 cid 113
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 48
+ES t 125
+
+E # 49 t 120.1 m 3 ce 48 msg 112
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 112 tid 112 eid 112 etid 112 c omnetpp::cMessage n "" pe 49
+
+E # 50 t 125 m 2 ce 48 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 114 tid 114 eid 114 etid 114 c omnetpp::cMessage n "" pe -1
+BS id 114 tid 114 eid 114 etid 114 c Message n "" pe 50
+SH sm 2 sg 3 pd 0.1
+ES t 125.1
+CL id 114 tid 114 eid 114 etid 114 c Message n "" pe 50 cid 115
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 50
+ES t 130
+
+E # 51 t 125.1 m 3 ce 50 msg 114
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 114 tid 114 eid 114 etid 114 c omnetpp::cMessage n "" pe 51
+
+E # 52 t 130 m 2 ce 50 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 116 tid 116 eid 116 etid 116 c omnetpp::cMessage n "" pe -1
+BS id 116 tid 116 eid 116 etid 116 c Message n "" pe 52
+SH sm 2 sg 3 pd 0.1
+ES t 130.1
+CL id 116 tid 116 eid 116 etid 116 c Message n "" pe 52 cid 117
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 52
+ES t 135
+
+E # 53 t 130.1 m 3 ce 52 msg 116
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 116 tid 116 eid 116 etid 116 c omnetpp::cMessage n "" pe 53
+
+E # 54 t 135 m 2 ce 52 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 118 tid 118 eid 118 etid 118 c omnetpp::cMessage n "" pe -1
+BS id 118 tid 118 eid 118 etid 118 c Message n "" pe 54
+SH sm 2 sg 3 pd 0.1
+ES t 135.1
+CL id 118 tid 118 eid 118 etid 118 c Message n "" pe 54 cid 119
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 54
+ES t 140
+
+E # 55 t 135.1 m 3 ce 54 msg 118
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 118 tid 118 eid 118 etid 118 c omnetpp::cMessage n "" pe 55
+
+E # 56 t 140 m 2 ce 54 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 120 tid 120 eid 120 etid 120 c omnetpp::cMessage n "" pe -1
+BS id 120 tid 120 eid 120 etid 120 c Message n "" pe 56
+SH sm 2 sg 3 pd 0.1
+ES t 140.1
+CL id 120 tid 120 eid 120 etid 120 c Message n "" pe 56 cid 121
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 56
+ES t 145
+
+E # 57 t 140.1 m 3 ce 56 msg 120
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 120 tid 120 eid 120 etid 120 c omnetpp::cMessage n "" pe 57
+
+E # 58 t 145 m 2 ce 56 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 122 tid 122 eid 122 etid 122 c omnetpp::cMessage n "" pe -1
+BS id 122 tid 122 eid 122 etid 122 c Message n "" pe 58
+SH sm 2 sg 3 pd 0.1
+ES t 145.1
+CL id 122 tid 122 eid 122 etid 122 c Message n "" pe 58 cid 123
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 58
+ES t 150
+
+E # 59 t 145.1 m 3 ce 58 msg 122
+- INFO (Ordi2)Configuration1.ordi2: "Message received.
+BU id 3 txt Received
+DM id 122 tid 122 eid 122 etid 122 c omnetpp::cMessage n "" pe 59
+
+E # 60 t 150 m 2 ce 58 msg 63
+- INFO (Ordi1)Configuration1.ordi1: Sending message
+CM id 124 tid 124 eid 124 etid 124 c omnetpp::cMessage n "" pe -1
+BS id 124 tid 124 eid 124 etid 124 c Message n "" pe 60
+SH sm 2 sg 3 pd 0.1
+ES t 150.1
+CL id 124 tid 124 eid 124 etid 124 c Message n "" pe 60 cid 125
+BS id 63 tid 63 eid 63 etid 63 c omnetpp::cMessage n Timeout pe 60
+ES t 155
+SE e 0 c 38 m "Simulation time limit reached -- at t=150s, event #61"
+>>>>>>> d5904819cc100adf91884c3a8cb39cc199cb3a0b
